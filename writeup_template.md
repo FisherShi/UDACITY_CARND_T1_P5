@@ -12,9 +12,9 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 [image1]: ./examples/car_notcar.png
 [image2]: ./examples/HSV_HOG.png
-[image3]: ./examples/sliding_windows.jpg
+[image3]: ./examples/sliding_windows.png
 [image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/img50.jpg
+[image5]: ./examples/example_output.png
 [image6]: ./examples/example_output.jpg
 [video1]: ./project_video.mp4
 
