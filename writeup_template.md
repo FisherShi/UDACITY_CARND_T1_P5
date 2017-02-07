@@ -12,8 +12,8 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 [image1]: ./examples/car_notcar.png
 [image2]: ./examples/HSV_HOG.png
-[image3]: ./examples/sliing_windows.png
-[image4]: ./examples/sliding_window.jpg
+[image3]: ./examples/sliding_windows.png
+[image4]: ./examples/vehicle_detected.png
 [image5]: ./examples/example_output.png
 [image6]: ./examples/example_output.jpg
 [video1]: ./project_video.mp4
@@ -63,7 +63,7 @@ an example image below:
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to try to minimize false positives and reliably detect cars?
 
-Ultimately I searched on 15 scales using L-channel HOG features of HLS space plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+Ultimately I searched on 4 scales using L-channel HOG features of HLS space plus spatially binned color and histograms of color in the feature vector. Only predictions with over 65% probabilities are considered positive. From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions. I change the structure of the label function so that diagonal pixels are treated connected. I then constructed bounding boxes to cover the area of all the labels detected..  Here are some example images:
 
 ![alt text][image4]
 ---
@@ -76,7 +76,7 @@ Here's a [link to my video result](./project_video.mp4)
 
 ####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
-I recorded the positions of positive detections in each frame of the video. Only predictions with over 85% probabilities are considered positive. From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions. I change the structure of the label function so that diagonal pixels are treated connected. I then constructed bounding boxes to cover the area of all the labels detected.  
+I recorded the positions of positive detections in each frame of the video. Only predictions with over 65% probabilities are considered positive. From the positive detections I created a heatmap and with threshold to identify vehicle positions. I change the structure of the label function so that diagonal pixels are treated connected. I then constructed bounding boxes to cover the area of all the labels detected.  
 
 Here's an example result showing the heatmap, label image and bounding boxes overlaid on a test image:
 
@@ -88,6 +88,14 @@ Here's an example result showing the heatmap, label image and bounding boxes ove
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+In summary, I complete this project by: 
 
-Several ways to improve the pipeline: 1. Store the decetion results in the last several frames to further remove false positive and to produce more stable bonding boxes; 2. to increase the speed, I can extract HOG features just once for the lower half of each frame of video and subsample that array for each sliding window;
+1 extract the features (bin spacial, color hist, HOG) of training data
+2 combine and scale the features, then train the data with linear SVM
+3 determine area of interest and appropriate window sizes, and then apply slide window 
+4 search the windowws of each frame, extract the features of all the windows, predict if the vechile is in the windows using the SVM classifier
+5 use heat map and label to reduce false positive
+
+The pipeline is likely to fail when the angel shifted significantly in the video, or there are many overlap of cars in the field of view (the pipline cannot tell different vehicles from each other).
+
+Several ways to improve the pipeline: 1. Store the decetion results in the last several frames to further remove false positive and to produce more stable bonding boxes; 2. to increase the speed, I can extract HOG features just once for the lower half of each frame of video and subsample that array for each sliding window; 3. apply perspective transform; 4. use neural networks to train the training set.
