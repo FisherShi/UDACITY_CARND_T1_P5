@@ -71,7 +71,7 @@ Ultimately I searched on 4 scales using L-channel HOG features of HLS space plus
 ### Video Implementation
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./project_video.mp4)
+The result is the video 'project_output.mp4' 
 
 
 ####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
@@ -91,9 +91,13 @@ Here's an example result showing the heatmap, label image and bounding boxes ove
 In summary, I complete this project by: 
 
 1 extract the features (bin spacial, color hist, HOG) of training data
+
 2 combine and scale the features, then train the data with linear SVM
+
 3 determine area of interest and appropriate window sizes, and then apply slide window 
+
 4 search the windowws of each frame, extract the features of all the windows, predict if the vechile is in the windows using the SVM classifier
+
 5 use heat map and label to reduce false positive
 
 The pipeline is likely to fail when the angel shifted significantly in the video, or there are many overlap of cars in the field of view (the pipline cannot tell different vehicles from each other).
