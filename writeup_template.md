@@ -55,7 +55,7 @@ I trained a linear SVM using bin_spacial, color_hist, and HOG features. I also c
 
 ####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to only search the bottom half of the image. The windows have 15 rows, increasing sizes when approaching the bottom of the image, and an overlap of 0.7.  the code is in section: 'test on image' of the IPython notebook: 'Vehicle_detection'
+I decided to only search the bottom half of the image. The windows have 12 rows, 4 different sizes, increasing sizes when approaching the bottom of the image, and an overlap of 0.8.  the code is in section: 'slide windows' of the IPython notebook: 'Vehicle_detection'
 
 an example image below:
 
