@@ -8,7 +8,7 @@
 [video1]: ./project_video.mp4
 
 ---
-#Udacity Vehicle Detection Project
+#Udacity Vehicle Detection Project (Term 1: Computer Vision and Deep Learning)
 
 ##The Goal of this Project
 
