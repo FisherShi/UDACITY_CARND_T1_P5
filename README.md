@@ -26,6 +26,8 @@ In summary, I complete this project by:
 
 The result is the video 'project_output.mp4' 
 
+The initial project repo can be found [here](https://github.com/udacity/CarND-Vehicle-Detection.git)
+
 ## Feature Extraction
 
 The code for this step is contained in the IPython notebook: 'Vehicle_detection_color_space'.  
