@@ -8,7 +8,19 @@
 [video1]: ./project_video.mp4
 
 ---
-###Writeup / README
+#Udacity Vehicle Detection Project
+
+##The Goal of this Project
+
+The goal of this project is to write a software pipeline to identify vehicles in a video from a front-facing camera on a car. 
+
+##Summary
+
+In summary, I complete this project by: 
+
+1 extract the features (bin spacial, color hist, HOG) of training data; 2 combine and scale the features, then train the data with linear SVM; 3 determine area of interest and appropriate window sizes, and then apply slide window; 4 search the windowws of each frame, extract the features of all the windows, predict if the vechile is in the windows using the SVM classifier; 5 use heat map and label to reduce false positive
+
+The pipeline is likely to fail when the angel shifted significantly in the video, or there are many overlap of cars in the field of view (the pipline cannot tell different vehicles from each other).
 
 ###Histogram of Oriented Gradients (HOG)
 
@@ -74,10 +86,6 @@ Here's an example result showing the heatmap, label image and bounding boxes ove
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-In summary, I complete this project by: 
 
-1 extract the features (bin spacial, color hist, HOG) of training data; 2 combine and scale the features, then train the data with linear SVM; 3 determine area of interest and appropriate window sizes, and then apply slide window; 4 search the windowws of each frame, extract the features of all the windows, predict if the vechile is in the windows using the SVM classifier; 5 use heat map and label to reduce false positive
-
-The pipeline is likely to fail when the angel shifted significantly in the video, or there are many overlap of cars in the field of view (the pipline cannot tell different vehicles from each other).
 
 Several ways to improve the pipeline: 1. Store the decetion results in the last several frames to further remove false positive and to produce more stable bonding boxes; 2. to increase the speed, I can extract HOG features just once for the lower half of each frame of video and subsample that array for each sliding window; 3. apply perspective transform; 4. use neural networks to train the training set.
