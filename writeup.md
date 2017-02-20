@@ -8,13 +8,13 @@
 [video1]: ./project_video.mp4
 
 ---
-#Udacity Vehicle Detection Project 
+# Udacity Vehicle Detection Project 
 
-##The Goal of this Project
+## The Goal of this Project
 
 The goal of this project is to write a software pipeline to identify vehicles in a video from a front-facing camera on a car. 
 
-##Summary
+## Summary
 
 In summary, I complete this project by: 
 
@@ -26,7 +26,7 @@ In summary, I complete this project by:
 
 The result is the video 'project_output.mp4' 
 
-##Feature Extraction
+## Feature Extraction
 
 The code for this step is contained in the IPython notebook: 'Vehicle_detection_color_space'.  
 
@@ -61,21 +61,17 @@ Ultimately I searched on 4 scales using L-channel HOG features of HLS space plus
 
 ## Reduce False Positive
 
-From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions. I change the structure of the label function so that diagonal pixels are treated connected. I then constructed bounding boxes to cover the area of all the labels detected..  Here are some example images:
-
-![alt text][image4]
-
 I recorded the positions of positive detections in each frame of the video. Only predictions with over 65% probabilities are considered positive. From the positive detections I created a heatmap and with threshold to identify vehicle positions. I change the structure of the label function so that diagonal pixels are treated connected. I then constructed bounding boxes to cover the area of all the labels detected.  
 
 Here's an example result showing the heatmap, label image and bounding boxes overlaid on a test image:
 
 ![alt text][image5]
 
----
+Some more examples on the snapshots of the project video footage:
 
-###Discussion
+![alt text][image4]
 
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+## Potential Problems & Ways to improve
 
 The pipeline is likely to fail when the angel shifted significantly in the video, or there are many overlap of cars in the field of view (the pipline cannot tell different vehicles from each other).
 
