@@ -68,7 +68,7 @@ Some more examples on the snapshots of the project video footage:
 
 ![alt text][image4]
 
-## Potential Problems & Ways to improve
+## Potential Problems & Ways to Improve
 
 The pipeline is likely to fail when the angel shifted significantly in the video, or there are many overlap of cars in the field of view (the pipline cannot tell different vehicles from each other).
 
