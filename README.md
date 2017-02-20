@@ -15,11 +15,13 @@ The goal of this project is to write a software pipeline to identify vehicles in
 
 ## Summary
 In summary, I complete this project by: 
+
 1. Extract the features (bin spacial, color hist, HOG) of training data; 
 2. Combine and scale the features, then train the data with linear SVM; 
 3. Determine area of interest and appropriate window sizes, and then apply slide window; 
 4. Search the windows of each frame, extract the features of all the windows, then predict if the vechile is in the windows using the SVM classifier; 
 5. Use heat map and label to reduce false positive
+
 The result is the video 'project_output.mp4' 
 
 ## Feature Extraction
