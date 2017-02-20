@@ -21,9 +21,8 @@ In summary, I complete this project by:
 1. Extract the features (bin spacial, color hist, HOG) of training data; 
 2. Combine and scale the features, then train the data with linear SVM; 
 3. Determine area of interest and appropriate window sizes, and then apply slide window; 
-4. Search the windowws of each frame, extract the features of all the windows
-5. Predict if the vechile is in the windows using the SVM classifier; 
-6. Use heat map and label to reduce false positive
+4. Search the windows of each frame, extract the features of all the windows, then predict if the vechile is in the windows using the SVM classifier; 
+5. Use heat map and label to reduce false positive
 
 The result is the video 'project_output.mp4' 
 
@@ -60,17 +59,11 @@ an example image below:
 
 Ultimately I searched on 4 scales using L-channel HOG features of HLS space plus spatially binned color and histograms of color in the feature vector. Only predictions with over 65% probabilities are considered positive. 
 
-## False Positive
+## Reduce False Positive
 
 From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions. I change the structure of the label function so that diagonal pixels are treated connected. I then constructed bounding boxes to cover the area of all the labels detected..  Here are some example images:
 
 ![alt text][image4]
----
-
-
-
-
-####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
 I recorded the positions of positive detections in each frame of the video. Only predictions with over 65% probabilities are considered positive. From the positive detections I created a heatmap and with threshold to identify vehicle positions. I change the structure of the label function so that diagonal pixels are treated connected. I then constructed bounding boxes to cover the area of all the labels detected.  
 
