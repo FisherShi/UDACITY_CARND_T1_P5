@@ -11,9 +11,11 @@
 # Udacity Vehicle Detection Project 
 
 ## The Goal of this Project
+
 The goal of this project is to write a software pipeline to identify vehicles in a video from a front-facing camera on a car. 
 
 ## Summary
+
 In summary, I complete this project by: 
 
 1. Extract the features (bin spacial, color hist, HOG) of training data; 
@@ -25,6 +27,7 @@ In summary, I complete this project by:
 The result is the video 'project_output.mp4' 
 
 ## Feature Extraction
+
 The code for this step is contained in the IPython notebook: 'Vehicle_detection_color_space'.  
 I started by reading in all the `vehicle` and `non-vehicle` files.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
@@ -34,7 +37,6 @@ I then explored different color spaces and different `skimage.hog()` parameters 
 
 Here is an example using the `HSV` color space and HOG parameters of `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
-
 ![alt text][image2]
 
 I tried various combinations of parameters and decided to use L channel of HLS color space, and `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)` 
@@ -43,7 +45,6 @@ It turns out all 3 channels of RGB, V channel of HSV, L channel of LUV, L channe
 ##Training
 
 I trained a linear SVM using bin_spacial, color_hist, and HOG features. I also calibrated the classifier to enable the probability output. The code is in section: 'use linear SVC to train' of the IPython notebook: 'Vehicle_detection'
-
 
 ## Searching & Prediction
 
