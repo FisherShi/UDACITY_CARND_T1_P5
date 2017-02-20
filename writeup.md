@@ -8,7 +8,7 @@
 [video1]: ./project_video.mp4
 
 ---
-#Udacity Vehicle Detection Project (Term 1: Computer Vision and Deep Learning)
+#Udacity Vehicle Detection Project 
 
 ##The Goal of this Project
 
@@ -24,9 +24,6 @@ In summary, I complete this project by:
 4. Search the windowws of each frame, extract the features of all the windows
 5. predict if the vechile is in the windows using the SVM classifier; 
 6. use heat map and label to reduce false positive
-
-The pipeline is likely to fail when the angel shifted significantly in the video, or there are many overlap of cars in the field of view (the pipline cannot tell different vehicles from each other).
-
 ###Histogram of Oriented Gradients (HOG)
 
 ####1. Explain how (and identify where in your code) you extracted HOG features from the training images.
@@ -91,6 +88,6 @@ Here's an example result showing the heatmap, label image and bounding boxes ove
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-
+The pipeline is likely to fail when the angel shifted significantly in the video, or there are many overlap of cars in the field of view (the pipline cannot tell different vehicles from each other).
 
 Several ways to improve the pipeline: 1. Store the decetion results in the last several frames to further remove false positive and to produce more stable bonding boxes; 2. to increase the speed, I can extract HOG features just once for the lower half of each frame of video and subsample that array for each sliding window; 3. apply perspective transform; 4. use neural networks to train the training set.
