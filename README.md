@@ -24,7 +24,7 @@ In summary, I complete this project by:
 4. Search the windows of each frame, extract the features of all the windows, then predict if the vechile is in the windows using the SVM classifier; 
 5. Use heat map and label to reduce false positive
 
-The result is the video 'project_output.mp4' 
+The result is shown in the video 'project_output.mp4' 
 
 The initial project repo can be found [here](https://github.com/udacity/CarND-Vehicle-Detection.git)
 
