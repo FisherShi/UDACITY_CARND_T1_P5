@@ -8,7 +8,7 @@
 [video1]: ./project_video.mp4
 
 ---
-# Udacity Vehicle Detection Project 
+# UDACITY Vehicle Detection Project 
 
 ## The Goal of this Project
 
