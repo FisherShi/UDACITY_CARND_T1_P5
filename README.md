@@ -26,7 +26,7 @@ In summary, I complete this project by:
 
 The result is shown in the video 'project_output.mp4' 
 
-The initial project repo can be found [here](https://github.com/udacity/CarND-Vehicle-Detection.git)
+The project repo of Udacity can be found [here](https://github.com/udacity/CarND-Vehicle-Detection.git)
 
 ## Feature Extraction
 
